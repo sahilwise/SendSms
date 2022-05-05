@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+     {{>cdnLinks}}
+</head>
+<body>
+    {{>nav}}
+
+
+
+          <section class="text-blueGray-700">
+            <div class="container items-center py-12 lg:px-20">
+              <div class="
+            flex flex-col
+            w-full
+            max-w-md
+            p-10
+            mx-auto
+            my-6
+            transition
+            duration-500
+            ease-in-out
+            transform
+            bg-white
+            rounded-lg
+            md:mt-0
+          ">
+                <div class="mt-8">
+                  <div class="mt-6">
+                    <form action="/sendMessage" method="POST" class="space-y-6">
+                      <div>
+                        <label for="number" class="block text-sm font-medium text-neutral-600"> Phone Number </label>
+                        <div class="mt-1">
+                        <input id="number" name="number" type="number"  required="" placeholder="+917858XXXXXX" class="
+                        block
+                        w-full
+                        px-5
+                        py-3
+                        text-base text-neutral-600
+                        placeholder-gray-300
+                        transition
+                        duration-500
+                        ease-in-out
+                        transform
+                        border border-transparent
+                        rounded-lg
+                        bg-gray-50
+                        focus:outline-none
+                        focus:border-transparent
+                        focus:ring-2
+                        focus:ring-white
+                        focus:ring-offset-2
+                        focus:ring-offset-gray-300
+                      ">
+                        </div>
+                      </div>
+                      <div class="space-y-1">
+                        <label for="message" class="block text-sm font-medium text-neutral-600"> Type SMS Body </label>
+                        <div class="mt-1">
+                          <input id="message" name="message" type="message" required="" placeholder="You are in my Death Note" class="
+                        block
+                        w-full
+                        px-5
+                        py-3
+                        text-base text-neutral-600
+                        placeholder-gray-300
+                        transition
+                        duration-500
+                        ease-in-out
+                        transform
+                        border border-transparent
+                        rounded-lg
+                        bg-gray-50
+                        focus:outline-none
+                        focus:border-transparent
+                        focus:ring-2
+                        focus:ring-white
+                        focus:ring-offset-2
+                        focus:ring-offset-gray-300
+                      ">
+                        </div>
+                      </div>
+                     
+                      <div>
+                        <button type="submit" value="Send message" class="
+                      flex
+                      items-center
+                      justify-center
+                      w-full
+                      px-10
+                      py-4
+                      text-base
+                      font-medium
+                      text-center text-white
+                      transition
+                      duration-500
+                      ease-in-out
+                      transform
+                      bg-blue-600
+                      rounded-xl
+                      hover:bg-blue-700
+                      focus:outline-none
+                      focus:ring-2
+                      focus:ring-offset-2
+                      focus:ring-blue-500
+                    "> Send Message </button>
+                      </div>
+                    </form>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+</body>
+</html>
+

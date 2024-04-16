@@ -1,7 +1,7 @@
 # smsPrank
 ## usage
 
-### Open Vs Code Terminal >> git clone https://github.com/zincv8/smsprank >> cd smsprank >> npm i >> npm start
+### Open Vs Code Terminal >> git clone https://github.com/salnetx/smsprank >> cd smsprank >> npm i >> npm start
 
 ### Open https://www.fast2sms.com/ create your account get api keys
 
